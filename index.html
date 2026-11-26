@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Techvanta | Home Networks, Wi-Fi and Internet Basics Explained</title>
+<meta name="description" content="Techvanta is an independent reading space about home networks: how the internet reaches your devices, how Wi-Fi works and simple steps for a steadier connection.">
+
+<!-- Google AdSense / Google Ads script: paste your site code here (inside head) -->
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{--ink:#12161D;--ink2:#1D232E;--amber:#FFB020;--amber-d:#D98E00;--bg:#F5F6F8;--white:#fff;--text:#222A36;--muted:#5D6674;--line:#DFE3EA;--r:12px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--white);color:var(--text);line-height:1.75;font-size:17px;width:100%;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:var(--amber-d)}
+a:focus-visible,summary:focus-visible,.btn:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+h1,h2,h3{font-family:'Space Grotesk',system-ui,sans-serif;font-weight:700;line-height:1.15;color:var(--ink);letter-spacing:-.02em}
+.wrap{width:100%;max-width:1200px;margin:0 auto;padding:0 28px}
+.narrow{max-width:780px}
+header{background:var(--ink);position:sticky;top:0;z-index:30}
+.bar{display:flex;align-items:center;justify-content:space-between;height:72px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:#fff}
+.brand span{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.5rem}
+nav ul{display:flex;gap:28px;list-style:none}
+nav a{color:#B9C1CF;text-decoration:none;font-weight:500;font-size:.94rem}
+nav a:hover{color:var(--amber)}
+.hero{background:var(--ink);color:#fff;padding:76px 0 84px}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.hero h1{color:#fff;font-size:clamp(2.5rem,5vw,4rem);margin-bottom:20px}
+.hero h1 em{font-style:normal;color:var(--amber)}
+.hero p{color:#B9C1CF;font-size:1.12rem;max-width:520px;margin-bottom:30px}
+.btn{display:inline-block;background:var(--amber);color:var(--ink);text-decoration:none;padding:15px 30px;border-radius:10px;font-weight:700;transition:background .2s}
+.btn:hover{background:#ffc552}
+.net{background:var(--ink2);border:1px solid #2B3341;border-radius:16px;padding:20px}
+.net svg{width:100%;height:auto;display:block}
+section{padding:84px 0}
+.tint{background:var(--bg)}
+.sec-head{max-width:700px;margin-bottom:44px}
+.sec-head h2{font-size:clamp(2rem,3.6vw,2.7rem);margin-bottom:14px}
+.sec-head p{color:var(--muted)}
+.intro{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:start}
+.intro h2{font-size:clamp(2rem,3.4vw,2.6rem)}
+.intro p{margin-bottom:20px;color:var(--muted)}
+.chain{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:c}
+.ch{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:28px 24px;position:relative;counter-increment:c}
+.ch::before{content:"0" counter(c);font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:2.4rem;color:var(--amber);display:block;line-height:1;margin-bottom:14px}
+.ch h3{font-size:1.25rem;margin-bottom:8px}
+.ch p{font-size:.96rem;color:var(--muted);line-height:1.65}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.split.flip .pic{order:2}
+.pic{border-radius:var(--r);overflow:hidden;background:#b8bfcc}
+.pic img{width:100%;height:100%;min-height:440px;object-fit:cover}
+.split h2{font-size:clamp(1.9rem,3.2vw,2.5rem);margin-bottom:18px}
+.split p{color:var(--muted);margin-bottom:18px}
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r);background:#fff}
+table{width:100%;border-collapse:collapse;min-width:640px}
+th,td{text-align:left;padding:16px 20px;border-bottom:1px solid var(--line);font-size:.96rem;vertical-align:top}
+th{background:var(--ink);color:#fff;font-weight:600}
+tr:last-child td{border-bottom:none}
+td:first-child{font-weight:700;color:var(--ink);font-family:'Space Grotesk',sans-serif}
+.steps{list-style:none;counter-reset:s;max-width:820px}
+.steps li{counter-increment:s;position:relative;padding:0 0 30px 70px}
+.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:44px;height:44px;border-radius:12px;background:var(--ink);color:var(--amber);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.15rem}
+.steps li::after{content:"";position:absolute;left:21px;top:50px;bottom:6px;width:2px;background:var(--line)}
+.steps li:last-child::after{display:none}
+.steps h3{font-size:1.25rem;margin-bottom:6px}
+.steps p{color:var(--muted)}
+.tips{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.tp{background:var(--ink);color:#C5CCD9;border-radius:var(--r);padding:30px 28px}
+.tp h3{color:#fff;font-size:1.25rem;margin-bottom:10px}
+.tp p{font-size:.97rem}
+.gal{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:16px}
+.gal figure{margin:0}
+.gal .ph{border-radius:var(--r);overflow:hidden;background:#b8bfcc}
+.gal img{width:100%;height:270px;object-fit:cover}
+.gal figcaption{font-size:.92rem;color:var(--muted);padding-top:10px}
+details{border-bottom:1px solid var(--line);padding:20px 0}
+summary{cursor:pointer;font-weight:600;font-size:1.06rem;list-style:none;display:flex;justify-content:space-between;gap:20px;color:var(--ink)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.5rem;line-height:1;color:var(--amber-d)}
+details[open] summary::after{content:"\2212"}
+details p{margin-top:14px;color:var(--muted)}
+.ad-slot{width:100%;max-width:1200px;margin:0 auto;padding:30px 28px;min-height:120px;text-align:center}
+.disclaimer{background:var(--bg);border:1px solid var(--line);border-left:5px solid var(--amber);border-radius:var(--r);padding:32px 36px}
+.disclaimer h3{font-size:1.35rem;margin-bottom:12px}
+.disclaimer p{color:var(--muted);font-size:.96rem;margin-bottom:10px}
+footer{background:var(--ink);color:#9AA4B5;padding:56px 0 32px}
+.foot{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;margin-bottom:32px}
+.foot p{max-width:420px;font-size:.95rem;margin-top:14px}
+.foot ul{list-style:none}
+.foot li{margin-bottom:10px}
+.foot a{color:#fff;text-decoration:none}
+.foot a:hover{text-decoration:underline}
+.copy{border-top:1px solid rgba(255,255,255,.14);padding-top:20px;font-size:.88rem}
+@media(max-width:960px){
+nav{display:none}
+.hero-grid,.intro,.split{grid-template-columns:1fr;gap:36px}
+.split.flip .pic{order:0}
+.chain{grid-template-columns:1fr 1fr}
+.tips,.gal{grid-template-columns:1fr}
+.gal img{height:240px}
+.pic img{min-height:300px}
+section{padding:58px 0}
+}
+@media(max-width:560px){.chain{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="Techvanta home">
+      <svg width="34" height="34" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="#FFB020"/><path d="M8 17a17 17 0 0 1 24 0M13 22a10 10 0 0 1 14 0" fill="none" stroke="#12161D" stroke-width="2.8" stroke-linecap="round"/><circle cx="20" cy="28" r="2.6" fill="#12161D"/></svg>
+      <span>Techvanta</span>
+    </a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#terms">Terms</a></li>
+        <li><a href="#fix">Troubleshooting</a></li>
+        <li><a href="#faq">Questions</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<div class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Your internet, <em>finally explained</em>.</h1>
+      <p>Techvanta is an independent reading space about home networks. We explain how the internet reaches your devices, how Wi-Fi works and which simple habits help your connection stay steady.</p>
+      <a class="btn" href="#about">Start reading</a>
+    </div>
+    <div class="net" role="img" aria-label="Diagram of internet reaching a router and connecting phone, laptop and television">
+      <svg viewBox="0 0 440 300">
+        <g stroke="#FFB020" stroke-width="2" fill="none" stroke-linecap="round">
+          <path d="M220 70v60"/><path d="M220 160L90 230"/><path d="M220 160v70"/><path d="M220 160L350 230"/>
+        </g>
+        <circle cx="220" cy="48" r="26" fill="#2B3341" stroke="#FFB020" stroke-width="2"/>
+        <path d="M208 48h24M220 36c5 6 5 18 0 24M220 36c-5 6-5 18 0 24" stroke="#FFB020" stroke-width="2" fill="none"/>
+        <rect x="170" y="130" width="100" height="36" rx="8" fill="#FFB020"/>
+        <circle cx="190" cy="148" r="4" fill="#12161D"/><circle cx="205" cy="148" r="4" fill="#12161D"/>
+        <rect x="60" y="215" width="60" height="42" rx="6" fill="#2B3341" stroke="#9AA4B5" stroke-width="2"/>
+        <rect x="190" y="230" width="60" height="38" rx="6" fill="#2B3341" stroke="#9AA4B5" stroke-width="2"/>
+        <rect x="320" y="215" width="60" height="42" rx="6" fill="#2B3341" stroke="#9AA4B5" stroke-width="2"/>
+        <g fill="#B9C1CF" font-family="DM Sans,sans-serif" font-size="13" text-anchor="middle"><text x="220" y="94" fill="#B9C1CF"></text><text x="90" y="278">Phone</text><text x="220" y="288">Laptop</text><text x="350" y="278">TV</text></g>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap intro">
+    <h2>Why Techvanta exists</h2>
+    <div>
+      <p>A slow video, a dropped call, a page that will not load: most of us have wondered what is going wrong with the internet at home. The answer is often simple, but explanations tend to be buried in technical language.</p>
+      <p>Techvanta was created to make home networking understandable. Each article explains one idea clearly, from what a router actually does to why Wi-Fi feels weaker in some rooms.</p>
+      <p>We do not sell equipment or internet plans, and we do not recommend providers. Our goal is general understanding, so that you can think more calmly when something does not work.</p>
+    </div>
+  </div>
+</section>
+
+<div class="ad-slot">
+  <!-- Google ad unit 1: paste your ad code here -->
+  <!--
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="1111111111" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  -->
+</div>
+
+<section id="how" class="tint" style="padding-top:60px">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>From the street to your screen</h2>
+      <p>Four pieces work together every time you open a web page.</p>
+    </div>
+    <div class="chain">
+      <div class="ch"><h3>The service line</h3><p>A cable, fibre or mobile signal brings the internet from your provider into the building.</p></div>
+      <div class="ch"><h3>The modem</h3><p>Translates that incoming signal into a form your home equipment can use.</p></div>
+      <div class="ch"><h3>The router</h3><p>Shares the connection between all your devices and directs each request to the right place.</p></div>
+      <div class="ch"><h3>Your devices</h3><p>Phones, laptops and televisions connect by Wi-Fi or by a cable and ask for pages and videos.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div class="pic"><img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=900&q=80" alt="Network cables plugged into a switch" loading="lazy"></div>
+    <div>
+      <h2>Why Wi-Fi feels strong in one room and weak in another</h2>
+      <p>Wi-Fi travels as radio waves, and those waves weaken with distance and with obstacles. Thick walls, floors, mirrors and large appliances all absorb or reflect the signal, so the same router can feel excellent in one room and poor in the next.</p>
+      <p>Many people place the router in a corner, behind furniture or in a cupboard because it looks tidy. A central, open and slightly raised position usually spreads the signal more evenly through a home.</p>
+      <p>Neighbouring networks can also add interference, especially in apartment buildings. Understanding these basics helps you try sensible fixes before assuming something is broken.</p>
+    </div>
+  </div>
+</section>
+
+<section id="terms" class="tint">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Internet words, in plain English</h2>
+      <p>These terms appear on packaging, settings screens and support pages.</p>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Term</th><th>What it means</th><th>Everyday comparison</th></tr></thead>
+        <tbody>
+          <tr><td>Bandwidth</td><td>How much data a connection can carry at once</td><td>The width of a road</td></tr>
+          <tr><td>Speed (Mbps)</td><td>How quickly data moves, measured in megabits per second</td><td>How fast traffic flows</td></tr>
+          <tr><td>Latency</td><td>The delay before data starts to arrive</td><td>The pause before a reply</td></tr>
+          <tr><td>Router</td><td>A device that shares your connection with all your devices</td><td>A post office sorting parcels</td></tr>
+          <tr><td>Wi-Fi band</td><td>The radio frequency used, usually 2.4 or 5 GHz</td><td>Different radio channels</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="fix">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>A calm order for fixing a slow connection</h2>
+      <p>Work through these steps from simple to more involved, and stop when the problem is solved.</p>
+    </div>
+    <ol class="steps">
+      <li><h3>Check whether it is one device or all</h3><p>If only one device is slow, the problem is probably with that device, not the network.</p></li>
+      <li><h3>Restart the router</h3><p>Turn it off for about thirty seconds and switch it back on. This clears many temporary glitches.</p></li>
+      <li><h3>Move closer or move the router</h3><p>Test near the router. If speed improves, the signal may simply be struggling to reach your room.</p></li>
+      <li><h3>Try a cable</h3><p>A wired connection shows whether Wi-Fi is the weak link for fixed devices like a desktop or television.</p></li>
+      <li><h3>Update and check settings</h3><p>Keep the router's software updated according to the maker's instructions, and contact your provider if the issue continues.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="tint">
+  <div class="wrap">
+    <div class="sec-head"><h2>Three habits for a steadier home network</h2></div>
+    <div class="tips">
+      <div class="tp"><h3>Secure the Wi-Fi</h3><p>Use a strong, unique password and change default ones, so that strangers cannot join your network.</p></div>
+      <div class="tp"><h3>Place it well</h3><p>Position the router centrally, off the floor and away from thick walls and other electronics.</p></div>
+      <div class="tp"><h3>Reduce the load</h3><p>Large downloads and many streams at once share one connection. Spreading them out keeps everything smoother.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><h2>Connected homes</h2><p>Networks quietly support work, learning and entertainment.</p></div>
+    <div class="gal">
+      <figure><div class="ph"><img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&w=900&q=80" alt="Home desk with laptop and monitor" loading="lazy"></div><figcaption>Remote work depends on a reliable connection.</figcaption></figure>
+      <figure><div class="ph"><img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=700&q=80" alt="Glowing network of connected points around the globe" loading="lazy"></div><figcaption>The internet is a network of networks.</figcaption></figure>
+      <figure><div class="ph"><img src="https://images.unsplash.com/photo-1516044734145-07ca8eef8731?auto=format&fit=crop&w=700&q=80" alt="Colourful network cables" loading="lazy"></div><figcaption>Cables still carry much of the world's data.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<div class="ad-slot">
+  <!-- Google ad unit 2: paste your ad code here -->
+  <!--
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="2222222222" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  -->
+</div>
+
+<section id="faq" class="tint">
+  <div class="wrap narrow">
+    <div class="sec-head"><h2>Common questions</h2></div>
+    <details><summary>Does Techvanta sell internet plans or equipment?</summary><p>No. Techvanta is an informational website. We do not sell or recommend internet plans, routers or any other products or services, and we do not provide technical support.</p></details>
+    <details><summary>Is a modem the same as a router?</summary><p>No. A modem connects your home to your provider, while a router shares that connection with your devices. Some providers supply a single box that does both jobs.</p></details>
+    <details><summary>Why is my internet slower in the evening?</summary><p>Many households use the internet at the same time in the evening, which can increase congestion. Your own home may also have more devices active then.</p></details>
+    <details><summary>Should I leave my router on all the time?</summary><p>Most people do. An occasional restart can help with glitches, but there is usually no need to switch it off every night.</p></details>
+  </div>
+</section>
+
+<section>
+  <div class="wrap narrow">
+    <div class="disclaimer" role="note">
+      <h3>Disclaimer</h3>
+      <p>The content on Techvanta is provided for general informational and educational purposes only. It reflects common observations about home networks and should not be treated as professional IT, networking, cybersecurity or technical support advice.</p>
+      <p>Equipment, providers and home layouts differ, and results will vary. Before changing important settings, consult the manufacturer's documentation or your provider. Product names, if mentioned, belong to their owners and do not imply endorsement. Images are used for illustration only and do not represent or endorse any specific product, brand or service.</p>
+      <p>Techvanta does not sell products or services and makes no guarantees about results from applying the ideas shared here. Any decision you make is your own responsibility. Third-party advertising may appear on this site, and we are not responsible for the content of external advertisers.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="brand" href="#top" aria-label="Techvanta home">
+          <svg width="34" height="34" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="#FFB020"/><path d="M8 17a17 17 0 0 1 24 0M13 22a10 10 0 0 1 14 0" fill="none" stroke="#12161D" stroke-width="2.8" stroke-linecap="round"/><circle cx="20" cy="28" r="2.6" fill="#12161D"/></svg>
+          <span>Techvanta</span>
+        </a>
+        <p>An independent reading space about home networks, Wi-Fi and internet basics.</p>
+      </div>
+      <ul>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms &amp; Conditions</a></li>
+      </ul>
+    </div>
+    <div class="copy">&copy; 2026 Techvanta. All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>
